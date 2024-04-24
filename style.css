@@ -6,6 +6,17 @@ a.button {
     background-color: Lime;
     text-decoration: none;
     font-size: 50px;
+    box-shadow: 0 0 40px darkgreen;
+}
+a.homebutton {
+    padding: 2px 12px;
+    border: 1px outset buttonborder;
+    border-radius: 5px;
+    color: Black;
+    background-color: Lime;
+    text-decoration: none;
+    font-size: 50px;
+    box-shadow: 0 0 40px darkgreen;
 }
 .jacquard-24-regular {
     font-family: "Jacquard 24", system-ui;
@@ -19,8 +30,16 @@ a.button {
     font-weight: 400;
     font-style: normal;
 }
+body .login{
+    display: flex;
+    background-color: #0f0f0f;
+    font-family: "Jersey 10";
+}
 body{
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    display: flex;
     background-color: #0f0f0f;
     font-family: "Jersey 10";
 }
@@ -40,4 +59,77 @@ h2{
 h3{
     color: lime;
     font-size: 30px;
+}
+.wrapper{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border:2px solid darkgreen ;
+    border-radius: 20px;
+    box-shadow: 0 0 30px darkgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper.form-box{
+    width: 100%;
+    padding: 40px;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+.input-box label{
+    position: relative;
+    color: lime;
+}
+.input-box input{
+    position: relative;
+    color: lime;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: darkgreen;
+    outline: darkgreen;
+    box-shadow: 0 0 40px darkgreen;
+    border-radius: 20px;
+}
+.form-box h2{
+    text-align: center;
+    position: absolute;
+    top: 23%;
+    left: 39%;
+}
+.btn{
+    font-family: "Jersey 10", sans-serif;
+    padding: 2px 12px;
+    border: 1px outset buttonborder;
+    border-radius: 5px;
+    color: Black;
+    background-color: Lime;
+    font-size: 30px;
+    box-shadow: 0 0 40px darkgreen;
+    position: absolute;
+    top: 311%;
+    left: 32%;
+}
+.registrbtn{
+    font-family: "Jersey 10", sans-serif;
+    padding: 2px 12px;
+    border: 1px outset buttonborder;
+    border-radius: 5px;
+    color: Black;
+    background-color: Lime;
+    font-size: 30px;
+    box-shadow: 0 0 40px darkgreen;
+    position: absolute;
+    top: 311%;
+    left: 21%;
+}
+h2.registrazione{
+    position: absolute;
+    top: 20%;
+    left: 25%;
 }
