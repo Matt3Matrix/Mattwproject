@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mattw Project: Registrazione</title>
+</head>
+<body>
+<h2>Registrazione</h2>
+<form id="registerForm">
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username" required><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password" required><br>
+  <input type="submit" value="Registrati">
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
+<script>
+  document.getElementById('registerForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita il comportamento predefinito del form
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Crittografia della password
+    bcrypt.hash(password, 10, function(err, hash) {
+      if (err) {
+        console.error('Errore nella crittografia della password:', err);
+        return;
+      }
+
+      // Creazione dell'oggetto JSON
+      var userData = {
+        "username": username,
+        "password": hash
+      };
+
+      // Conversione dell'oggetto JSON in stringa
+      var jsonData = JSON.stringify(userData);
+
+      // Salvataggio dei dati nel file JSON (puoi sostituire questo con l'invio al server)
+      var blob = new Blob([jsonData], { type: 'application/json' });
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'userdata.json';
+      link.click();
+
+      // Reindirizzamento alla pagina di login dopo la registrazione
+      window.location.href = 'login.html';
+    });
+  });
+</script>
+</body>
+</html>
